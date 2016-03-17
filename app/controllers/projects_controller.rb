@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+	before_action :authenticate_user!, except: [:index, :show]
 	before_action :find_project, only: [:show, :edit, :update, :destroy]
 
 	def index
@@ -9,11 +10,11 @@ class ProjectsController < ApplicationController
 	end
 
 	def new
-		@project = Project.new
+		@project = current_user.projects.build
 	end
 
 	def create
-		@project = Project.new(project_params)
+		@project = current_user.projects.build(project_params)
 
 		if @project.save
 			redirect_to @project
