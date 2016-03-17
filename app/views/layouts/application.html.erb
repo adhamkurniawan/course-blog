@@ -8,11 +8,48 @@
 </head>
 <body>
 
-<% flash.each do |name, msg| %>
-	<%= content_tag :div, msg, class: "alert alert-info" %>
-<% end %>
+<header>
+	<div class="container">
+		<div class="logo">
+			<h1><span>B</span>log</h1>
+		</div>
+
+		<nav>
+			<ul>
+				<li><span class="glyphicon glyphicon-home"></span> <a><%= link_to "Home", root_path %></a></li>
+				<li><span class="glyphicon glyphicon-pencil"></span> <a><%= link_to "Articles", articles_path %></a></li>
+				<li><span class="glyphicon glyphicon-list-alt"></span> <a><%= link_to "Projects", projects_path %></a></li>
+				<% if user_signed_in? %>
+					<li><a><%= link_to "New Article", new_article_path %></a></li>
+					<li><a><%= link_to "New Project", new_project_path %></a></li>
+					<li><a><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a></li>
+				<% else %>
+					<li><a><%= link_to "Sign Up", new_user_registration_path %></a></li>
+					<li><a><%= link_to "Sign In", new_user_session_path %></a></li>
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div class="container">
+	<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, class: "alert alert-info" %>
+	<% end %>
+</div>
 
 <%= yield %>
+
+<div class="container">
+	<footer>
+		<hr>
+		<p class="copyright">&copy; 2016. Designed with all love in the world by <a href="#">Adham Kurniawan</a></p>
+		<p class="licenced">
+			<a href="#">Privacy Police</a>
+			<a href="#">Terms</a>
+		</p>
+	</footer>
+</div>
 
 </body>
 </html>

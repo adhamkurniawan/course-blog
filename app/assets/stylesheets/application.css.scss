@@ -1,0 +1,179 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$grey: #aca6a6;
+$black: #000000;
+$red: #ff7370;
+$blue: #e0f2f9;
+$border: #d5d5d5;
+
+// - - - - - - - Global - - - - - - - //
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	width: 1140px;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+// - - - - - - - Header - - - - - - - //
+
+.logo {
+	float: left;
+	margin-top: 2em;
+	h1 {
+		font-size: 1.75em;
+		color: $grey;
+		font-weight: 400;
+		span {
+			font-weight: 700;
+			color: $black;
+		}
+	}
+}
+
+
+nav {
+	float: right;
+	padding: 2.75em 0;
+	margin-top: 1em;
+	ul {
+		li {
+			display: inline;
+			margin-left: 3em;
+			a {
+				text-decoration: none;
+				color: $grey;
+				&:hover {
+					color: $black;
+					font-weight: 700;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+#banner {
+	background-color: $blue;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	padding: 5.5em 0;
+	margin-bottom: 2em;
+	h1 {
+		font-weight: 700;
+		span {
+			color: $grey;
+			font-size: .5em;
+			font-weight: 400;
+		}
+	}
+}
+
+// - - - - - - - Content - - - - - - - //
+
+.row {
+	margin-bottom: 3em;
+}
+
+hr {
+	width: 100%;
+	display: block;
+	border-top: 2px solid $border;
+	margin: 2em 0;
+}
+
+#show_title {
+	color: $red;
+	font-weight: 700;
+	hr {
+		width: 8em;
+		display: block;
+		border-top: 3px solid $blue;
+		margin: 2rem 0;
+	}
+}
+
+.content {
+	color: $grey;
+	font-weight: 400;
+	font-size: 1.5em;
+}
+
+[class*="col-"] {
+	h2 {
+		color: $black;
+	}
+	.title {
+		font-weight: 700;
+		a {
+			text-decoration: none;
+			color: $red;
+		}
+	}
+	p {
+		color: $grey;
+	}
+	hr {
+		width: 8em;
+		display: block;
+		border-top: 3px solid $blue;
+		margin: 2rem 0;
+	}
+	.profile {
+		font-size: 1.5em;
+	}
+	img {
+		width: 150px;
+		height: 200px;
+	}
+}
+
+// - - - - - - - Footer - - - - - - - //
+
+footer {
+	font-size: .75em;
+	.copyright {
+		float: left;
+		color: $grey;
+		a {
+			text-decoration: none;
+		}
+	}
+	.licenced {
+		float: right;
+		color: $grey;
+		a {
+			text-decoration: none;
+		}
+	}
+}

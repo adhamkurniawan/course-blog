@@ -1,0 +1,40 @@
+<div id="banner">
+	<div class="container">
+		<h1>Belive in your self. <span>Get shit done.</span></h1>
+		<p>Tacos pour-over forage, kale chips whatever pork belly occupy blue bottle ethical try-hard.</p>
+		<%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary" %>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h2>Articles</h2>
+			<hr>
+			<div class="container">
+				<% @articles.each do |article| %>
+					<h3 class="title"><%= link_to article.title, article %></h3>
+					<p><%= article.created_at.strftime("%B %d, %Y") %></p>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<h2>Projects</h2>
+			<hr>
+			<div class="container">
+				<% @projects.each do |project| %>
+					<h3 class="title"><%= link_to project.title, project %></h3>
+					<p><%= project.created_at.strftime("%B %d, %Y") %></p>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<h2>Profile</h2>
+			<hr>
+			<div class="container">
+				<%= image_tag "adham.jpg" %>
+				<p class="profile">Hey, my name is Adham Kurniawan. I'm developer who design. I make stuff and designing website also translate it to dynamic website. Nice to meet you my awesome friends :)</p>
+			</div>
+		</div>
+	</div>
+</div>
