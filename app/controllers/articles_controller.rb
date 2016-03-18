@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
+		@random_article = Article.where.not(id: @article).order("RANDOM()").first
 	end
 
 	def new
