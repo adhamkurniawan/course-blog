@@ -5,6 +5,7 @@
 			<hr>
 			<div class="container">
 				<% @projects.each do |project| %>
+					<%= image_tag project.image.url(:thumb) %>
 					<h3 class="title"><%= link_to project.title, project %></h3>
 					<p><%= project.created_at.strftime("%B %d, %Y") %></p>
 				<% end %>
